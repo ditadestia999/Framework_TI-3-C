@@ -9,13 +9,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="assets/images/jadwal1.jpeg" class="d-block w-100" alt="...">
+      <img src="assets/images/jadwal4.jpeg" class="d-block w-100" height="590" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="assets/images/jadwal2.jpeg" class="d-block w-100" alt="...">
+      <img src="assets/images/jadwal5.jpeg" class="d-block w-100" height="590" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="assets/images/jadwal3.jpeg" class="d-block w-100" alt="...">
+      <img src="assets/images/jadwal6.jpeg" class="d-block w-100" height="590" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
