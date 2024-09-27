@@ -20,13 +20,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+          <a class="nav-link active" aria-current="page" href="Beranda">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Mahasiswa</a>
+          <a class="nav-link" href="Mahasiswa">Mahasiswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Dosen</a>
+          <a class="nav-link" href="Dosen">Dosen</a>
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
