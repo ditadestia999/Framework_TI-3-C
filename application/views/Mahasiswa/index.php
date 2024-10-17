@@ -12,10 +12,9 @@
 			<!-- Akhir Validasi Error -->
 
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 			  Tambah Data
 			</button>
-
 			<div class="row mt-3">
 				<div class="col-md-8">
 

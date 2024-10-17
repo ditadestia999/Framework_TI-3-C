@@ -13,7 +13,7 @@
       	  <div class="row mt-3">
       	  	  <div class="col-md-8">
                   <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    Data Dosen<strong> Berhasil</strong><?= $this->session->flashdata('flash'); ?>
+                    Data Dosen<strong> Berhasil </strong><?= $this->session->flashdata('flash'); ?>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>
       	  	  </div>
@@ -21,18 +21,19 @@
       <?php endif; ?>
       <!-- akhir flashdata -->
 
-
+<!-- Pencarian -->
 			<div class="row mt-4">
 				<div class="col-md-6">
 					<form action="" method="post">
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="cari data Dosen..." name="keyword">
+							<input type="text" class="form-control" placeholder="Cari data dosen..." name="keyword">
 							<div class="input-group-append">
-								<button class="bt-primary" type="submit">cari</button>
+								<button class="btn btn-primary" type="submit">Cari</button>
 						</div>
 					</form>
 				</div>
 			</div>
+
       <!-- Daftar nama Dosen -->
       <div class="row mt-4">
           <div class="col-md-6">
@@ -41,9 +42,9 @@
 				  <?php foreach($dosen as $dsn): ?>
       <li class="list-group-item">
       	  <?= $dsn['namadosen']; ?>
-      	  <a href="<?= base_url();?>dosen/hapus<?= $dsn['Id']; ?>" class=" badge bg-danger float-end" onclick="return confirm('Anda Yakin');">Hapus</a>
-      	  <a href="<?= base_url();?>dosen/ubah<?= $dsn['Id']; ?>" class=" badge bg-success float-end">Ubah</a>
-          <a href="<?= base_url();?>dosen/detail<?= $dsn['Id']; ?>" class=" badge bg-primary float-end">Detail</a>
+      	  <a href="<?= base_url();?>dosen/hapus/<?= $dsn['id']; ?>" class=" badge bg-danger float-end" onclick="return confirm('Anda Yakin?');">Hapus</a>
+      	  <a href="<?= base_url();?>dosen/ubah/<?= $dsn['id']; ?>" class=" badge bg-success float-end">Ubah</a>
+          <a href="<?= base_url();?>dosen/detail/<?= $dsn['id']; ?>" class=" badge bg-primary float-end">Detail</a>
 
 
       </li>

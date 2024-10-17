@@ -23,9 +23,9 @@
       $this->db->insert('dosen', $data);
     }
 
-    public function getDosenById()
+    public function getDosenById($id)
     {
-     return $this-db->get_where('dosen',['id' =>$id])->row_array();
+     return $this->db->get_where('dosen',['id' =>$id])->row_array();
     }
     
 
@@ -40,11 +40,8 @@
         public function ubahDataDosen()
         {
             $data = [
-                 "kode" => $this->input->post('kode', true),
-                "matakuliah" => $this->input->post('matakuliah', true),
-                "sks" => $this->input->post('sks', true),
-                "semester" => $this->input->post('semester', true),
-                "jurusan" => $this->input->post('jurusan', true),
+                 "nip" => $this->input->post('nip', true),
+                "namadosen" => $this->input->post('namadosen', true),
             ];
             $this->db->where('id', $this->input->post('id'));
             $this->db->update('dosen', $data);
@@ -56,4 +53,4 @@
             $this->db->delete('dosen');
         }
 
-    } 
+    }

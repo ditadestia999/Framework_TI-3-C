@@ -11,6 +11,9 @@ class Dosen extends CI_Controller
     }
      public function index()
     {   
+        if (empty($this->session->userdata('email'))) {
+        redirect('login');
+    }
         $data['judul'] = 'Halaman Dosen';
         $data['dosen']=$this->Dosen_model->getAllDosen();
         if($this->input->post('keyword')){
@@ -37,9 +40,10 @@ class Dosen extends CI_Controller
     }
      
 
-    public function ubah()
+    public function ubah($id)
     {
         $data['judul'] = 'Form Ubah Data Dosen';
+        $data['dosen'] = $this->Dosen_model->getDosenById($id);
         $this->form_validation->set_rules('nip', 'Nip','required|is_unique[Dosen.nip]');
         $this->form_validation->set_rules('namadosen', 'NamaDosen','required|is_unique[Dosen.namadosen]');
         if($this->form_validation->run() == False){ 
@@ -47,31 +51,28 @@ class Dosen extends CI_Controller
             $this->load->view('dosen/ubah', $data);
             $this->load->view('templates/footer'); 
         }else{
-            $this->Dosen_model->ubahDataDosen();
-            $this->session->set_flashdata('flash', 'ditambahkan');
+            $this->Dosen_model->ubahDataDosen($id);
+            $this->session->set_flashdata('flash', 'Diubah');
             redirect('dosen');
         } 
-        {
-            $this->Dosen_model->UbahdataDosen();
-            $this->session->set_flashdata('flash', 'diubah');
-            redirect('dosen');
-        }
+        
     }
 
    public function Detail($id)
    {
-    $data['judul']= 'Detail data Dosen';
+    $data['judul']= 'Detail Data Dosen';
     $data['dosen']= $this->Dosen_model->getDosenById($id);
        $this->load->view('templates/header',$data);
-       $this->load->view('dosen/ubah', $data);
+       $this->load->view('dosen/detail', $data);
        $this->load->view('templates/footer'); 
    }
 
    public function hapus($id)
    {
     $this->Dosen_model->hapusDataDosen($id);
-    $this->session->set_flashdata('flash', 'dihapus');
+    $this->session->set_flashdata('flash', 'Dihapus'); 
     redirect('dosen'); 
    }
 }
  
+// session untuk notif
